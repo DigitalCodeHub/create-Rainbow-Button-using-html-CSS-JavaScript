@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Button</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+    }
+
+    .container {
+      position: relative;
+    }
+
+    .rainbow-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border: 2px solid #fff;
+      border-radius: 5px;
+      animation: rainbow 2s linear infinite;
+    }
+
+    .rainbow-button:hover {
+      animation: none;
+      background-color: #fff;
+    }
+
+    .card {
+      display: none;
+      position: absolute;
+      top: calc(100% + 20px);
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border: 2px solid #003cff;
+    }
+
+    @keyframes rainbow {
+      0% { background-color: #ff0000; }
+      16.666% { background-color: #ff9900; }
+      33.333% { background-color: #ffff00; }
+      50% { background-color: #33cc33; }
+      66.666% { background-color: #3399ff; }
+      83.333% { background-color: #663399; }
+      100% { background-color: #ff0066; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="rainbow-button" onclick="toggleCard()">Click me</button>
+    <div class="card" id="card">
+      <p>Hello welcome to Digitalcodehub!</p>
+    </div>
+  </div>
+  <script>
+    function toggleCard() {
+      var card = document.getElementById("card");
+      card.style.display = (card.style.display === "none" || card.style.display === "") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>
